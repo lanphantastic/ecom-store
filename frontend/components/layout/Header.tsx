@@ -1,5 +1,6 @@
-import Link from 'next/link'
-import styled from 'styled-components'
+import Link from 'next/link';
+import Nav from './Nav';
+import { styled } from './theme';
 
 const Logo = styled.h1`
   font-size: 4rem;
@@ -14,7 +15,7 @@ const Logo = styled.h1`
     text-transform: uppercase;
     padding: 0.5rem 1rem;
   }
-`
+`;
 
 const HeaderStyles = styled.header`
   .bar {
@@ -22,7 +23,7 @@ const HeaderStyles = styled.header`
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
   }
 
   .sub-bar {
@@ -30,7 +31,7 @@ const HeaderStyles = styled.header`
     grid-template-columns: 1fr auto;
     border-bottom: 1px solid var(--black, black);
   }
-`
+`;
 
 export default function Header() {
   return (
@@ -40,6 +41,10 @@ export default function Header() {
           <Link href="/">Ecomm</Link>
         </Logo>
       </div>
+      <div className="sub-bar">
+        <p>Search</p>
+      </div>
+      <Nav />
     </HeaderStyles>
   )
 }
