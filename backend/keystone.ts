@@ -6,8 +6,8 @@ It looks at the default export, and expects a Keystone config object.
 You can find all the config options in our docs here: https://keystonejs.com/docs/apis/config
 */
 
-import 'dotenv/config'
-const databaseURL = process.env.DATABASE_URL || 'postgres://dbuser:dbpass@localhost:5432/keystone'
+import ConfigProvider from './config'
+const databaseURL = ConfigProvider.config.databaseURL || 'postgres://dbuser:dbpass@localhost:5432/keystone'
 
 import { config } from '@keystone-6/core'
 
@@ -32,7 +32,7 @@ export default withAuth(
     },
     server: {
       cors: {
-        origin: [process.env.FRONTEND_URL || 'localhost'],
+        origin: [ConfigProvider.config.frontendURL || 'localhost'],
         credentials: true,
       },
     },
