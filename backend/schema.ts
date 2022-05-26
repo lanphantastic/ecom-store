@@ -19,6 +19,8 @@ import { Lists } from '.keystone/types'
 import { User } from './schemas/User'
 import { Post } from './schemas/Post'
 import { Tag } from './schemas/Tag'
+import { Product } from './schemas/Product'
+import { ProductImage } from './schemas/ProductImage'
 
 // We have a users list, a blogs list, and tags for blog posts, so they can be filtered.
 // Each property on the exported object will become the name of a list (a.k.a. the `listKey`),
@@ -31,4 +33,6 @@ export const lists: Lists = {
   Post,
   // Our final list is the tag list. This field is just a name and a relationship to posts
   Tag,
+  Product,
+  ProductImage
 }
