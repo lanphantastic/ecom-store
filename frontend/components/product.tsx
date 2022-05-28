@@ -4,6 +4,7 @@ import ItemStyles from './styles/ItemStyles'
 import Title from './styles/Title'
 import PriceTag from './styles/PriceTag'
 import { Product } from '../models/product'
+import formatMoney from '../lib/formatMoney'
 
 interface props {
   product: Product
@@ -21,7 +22,7 @@ export const ProductItem: React.FC<props> = ({ product }) => {
       <Title>
         <Link href={`/product/${product.id}`}>{product.name}</Link>
       </Title>
-      <PriceTag>{(product.price)}</PriceTag>
+      <PriceTag>{formatMoney(product.price)}</PriceTag>
       <p>{product.description}</p>
       <div className="buttonList">
         <Link
